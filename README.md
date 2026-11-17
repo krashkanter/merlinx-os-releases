@@ -70,7 +70,7 @@ After `sys.boot_completed=1`, the wrapper expects these **already provisioned** 
 | `phone-stack` | `/data/local/server/start.sh` | Starts the existing server stack and monitors dockerd; retries after 30 seconds if it exits. |
 | `phone-sysutils` | `/data/local/sysutils/bin/sysutilsd` | Starts the DroidUtils daemon without its `-boot` mode. |
 
-The configured server uses an ARM64 Debian chroot at `/data/local/debian`; its setup and credentials are not included. The daemon source is published at https://github.com/krashkanter/droidutils. The retained `sysutils` runtime paths are intentional.
+The configured server uses an ARM64 Debian chroot at `/data/local/debian`. Its backend source, startup scripts and deployment templates are published in [Kela Server](https://github.com/krashkanter/kela-server); its setup is documented there. Credentials and live server state are not included. The daemon source is published at https://github.com/krashkanter/droidutils. The retained `sysutils` runtime paths are intentional.
 
 Create `/data/local/server/disable-autostart` from recovery/rooted ADB to hold all three startup wrappers while repairing their dependencies. Logs go to `/data/local/server/boot-logs/`. Delete the marker to allow startup. On both tested boots Android's named wlan0 routing table appeared after the first startup attempt; the automatic retry recovered after about 30 seconds. Offline startup was not tested.
 

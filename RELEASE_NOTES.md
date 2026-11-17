@@ -17,7 +17,7 @@ gzip -dk server-boot.img.gz system_ext-services.img.gz
 sha256sum -c SHA256SUMS.images
 ```
 
-**The system_ext image requires pre-provisioned `/data/local/server/quiet-hardware.sh`, `/data/local/server/start.sh` and `/data/local/sysutils/bin/sysutilsd`.** It does not install Debian, Docker, apps, credentials or server data. Create `/data/local/server/disable-autostart` to hold startup while repairing dependencies.
+**The system_ext image requires pre-provisioned `/data/local/server/quiet-hardware.sh`, `/data/local/server/start.sh` and `/data/local/sysutils/bin/sysutilsd`.** It does not install Debian, Docker, apps, credentials or server data. The existing backend, startup scripts and deployment templates are published separately in [Kela Server](https://github.com/krashkanter/kela-server). Create `/data/local/server/disable-autostart` to hold startup while repairing dependencies.
 
 Android is globally Enforcing, but these root services run in LineageOS userdebug's **permissive su domain**. No confined server policy or Magisk installation is included. This is an experimental personally controlled userdebug setup.
 

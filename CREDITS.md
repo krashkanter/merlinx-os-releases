@@ -13,6 +13,7 @@ These unofficial images build on the work of the projects and device maintainers
 | AVB tooling | [LineageOS/android_external_avb](https://github.com/LineageOS/android_external_avb/tree/01ecfc9c3df4fbe3e785185742f3313252e70a18), based on Android Verified Boot from AOSP | `01ecfc9c3df4fbe3e785185742f3313252e70a18` |
 | ext4 inspection, image editing and filesystem checks | [e2fsprogs](https://e2fsprogs.sourceforge.net/) contributors (`debugfs`, `e2fsck`) | Host tools used to repack and validate system_ext |
 | Container kernel configuration and local init integration | [krashkanter](https://github.com/krashkanter), in this repository's `source/kernel` and `source/phone-init` directories | Release `lineage-24-server-20261117` |
+| Phone server backend and deployment | [Kela Server](https://github.com/krashkanter/kela-server) | Existing Python Docker bridge, Android startup scripts and deployment templates; separately provisioned, not embedded in the images |
 | Existing Android control app and root daemon | [DroidUtils](https://github.com/krashkanter/droidutils) | Runtime dependency of the init integration; not embedded in these partition images |
 
 The base ROM's remaining Android framework, system and vendor components retain their original ownership and licenses. The full pinned [official build manifest](source/official-build-manifest.xml) records their available source identities. Proprietary firmware and hardware components were inherited from the matching official nightly; no new Wi-Fi/Bluetooth driver implementation is claimed.
