@@ -1,0 +1,31 @@
+#!/system/bin/sh
+set -eu
+role="$1"
+logs=/data/local/server/boot-logs
+mkdir -p "$logs"
+chmod 700 "$logs"
+exec >> "$logs/$role.log" 2>&1
+echo "Starting $role at $(date) boot=$(cat /proc/sys/kernel/random/boot_id)"
+id
+
+# A recovery/rooted-ADB escape hatch; nothing runs while this marker exists.
+while [ -e /data/local/server/disable-autostart ]; do sleep 30; done
+
+case "$role" in
+ hardware)
+  exec /system/bin/sh /data/local/server/quiet-hardware.sh
+  ;;
+ stack)
+  # Stay alive after start.sh returns: init would otherwise reap daemon children.
+  /system/bin/sh /data/local/server/start.sh
+  echo "Stack ready $(date)"
+  while pidof dockerd >/dev/null; do sleep 10; done
+  echo 'Docker exited; init will clean up this service group and retry.'
+  exit 1
+  ;;
+ sysutils)
+  # Start the installed daemon unchanged, without its script-on-boot mode.
+  exec /data/local/sysutils/bin/sysutilsd
+  ;;
+ *) echo "Unknown service role: $role"; exit 2 ;;
+esac

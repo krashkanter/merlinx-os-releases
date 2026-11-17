@@ -1,0 +1,4 @@
+release-assets/
+*.img
+*.img.gz
+*.tar.gz

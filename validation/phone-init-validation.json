@@ -1,0 +1,12 @@
+{
+  "original_sha256": "453d2fb56a4eb656cb2b71d0f3ad4680ad4f07c968df6ff07c8201b30d940f3e",
+  "modified_sha256": "f3532be1ce5c967efd582445897fc355dfbdd50dde8a9f13afd7b8784105e889",
+  "partition_size": 582635520,
+  "original_entries_preserved": 3635,
+  "added": [
+    "/etc/init/phone-services.rc",
+    "/bin/phone-services"
+  ],
+  "policy": "Existing Lineage userdebug init->su rule; su is permissive",
+  "avb": "Unsigned footer verified; existing vbmeta hashtree-disabled flag 1 required"
+}

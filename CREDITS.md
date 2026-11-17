@@ -1,0 +1,22 @@
+# Credits and source provenance
+
+These unofficial images build on the work of the projects and device maintainers below. The custom work is limited to a kernel configuration fragment, compiling that kernel, repacking the matching boot image, and adding two init files to the matching system_ext image. It is not an independently developed Android ROM or a mainline Linux port.
+
+| Component | Original project / source | Exact revision or build used |
+| --- | --- | --- |
+| Base ROM, official boot ramdisk, DTB and system_ext contents | [LineageOS](https://lineageos.org/), [merlinx downloads](https://download.lineageos.org/devices/merlinx/builds) and its Redmi Note 9 maintainers | `lineage-24.0-20261110-nightly-merlinx-signed.zip`; SHA-256 `d145d17f72aa2d2f76258d71b24177b64e2048b96ae55f671889efdc5cc21433` |
+| Device tree | [LineageOS/android_device_xiaomi_merlinx](https://github.com/LineageOS/android_device_xiaomi_merlinx/tree/0a954634bd18006ce49183bee50eb9762efea58f) | `0a954634bd18006ce49183bee50eb9762efea58f` |
+| Shared MT6768 device tree | [LineageOS/android_device_xiaomi_mt6768-common](https://github.com/LineageOS/android_device_xiaomi_mt6768-common/tree/3f0327f1a21c6f992b065712c64cf27e8a559bd8) | `3f0327f1a21c6f992b065712c64cf27e8a559bd8` |
+| Kernel and device drivers | [LineageOS/android_kernel_xiaomi_mt6768](https://github.com/LineageOS/android_kernel_xiaomi_mt6768/tree/6fbdf4e6800ab732f8f132cd3eca05b26e357255), including its Linux, CIP, Xiaomi, MediaTek and other upstream contributors | `6fbdf4e6800ab732f8f132cd3eca05b26e357255` |
+| Kernel compiler | [LineageOS Android Clang r416183b prebuilt](https://github.com/LineageOS/android_prebuilts_clang_kernel_linux-x86_clang-r416183b/tree/54220fd601050b350b2af7adc913089ebf0e7aed); Android LLVM toolchain and LLVM contributors | `54220fd601050b350b2af7adc913089ebf0e7aed`; Android build `7284624`, Clang `12.0.5`; LLVM revision `c935d99d7cf2016289302412d708641d52d2f7ee` |
+| Boot image unpacking and packaging | [Android Open Source Project — platform/system/tools/mkbootimg](https://android.googlesource.com/platform/system/tools/mkbootimg/+/4a27dd13adf9846e12d585d6fe99a375ebb58396/) | `4a27dd13adf9846e12d585d6fe99a375ebb58396` |
+| AVB tooling | [LineageOS/android_external_avb](https://github.com/LineageOS/android_external_avb/tree/01ecfc9c3df4fbe3e785185742f3313252e70a18), based on Android Verified Boot from AOSP | `01ecfc9c3df4fbe3e785185742f3313252e70a18` |
+| ext4 inspection, image editing and filesystem checks | [e2fsprogs](https://e2fsprogs.sourceforge.net/) contributors (`debugfs`, `e2fsck`) | Host tools used to repack and validate system_ext |
+| Container kernel configuration and local init integration | [krashkanter](https://github.com/krashkanter), in this repository's `source/kernel` and `source/phone-init` directories | Release `lineage-24-server-20261117` |
+| Existing Android control app and root daemon | [DroidUtils](https://github.com/krashkanter/droidutils) | Runtime dependency of the init integration; not embedded in these partition images |
+
+The base ROM's remaining Android framework, system and vendor components retain their original ownership and licenses. The full pinned [official build manifest](source/official-build-manifest.xml) records their available source identities. Proprietary firmware and hardware components were inherited from the matching official nightly; no new Wi-Fi/Bluetooth driver implementation is claimed.
+
+For completeness, preparation of the separate, unfinished full-ROM build extracted vendor blobs from that official nightly. One missing NFC firmware library was sourced from [TheMuppets/proprietary_vendor_xiaomi_merlinx](https://github.com/TheMuppets/proprietary_vendor_xiaomi_merlinx/tree/93c99adccdbe83ffbf4be1c087acd8ee7ecfc002) at `93c99adccdbe83ffbf4be1c087acd8ee7ecfc002`: `vendor/lib/libsn100u_fw.so`, SHA-256 `21c53e85f61c40677948503140c7b090d920439c50b8f5414900a1a7c1a33fbe`. That supplemental blob was not used to create the two repacked partition images in this release, and the unfinished full-ROM output is not published here.
+
+The complete kernel source asset retains the original `COPYING`, per-file notices and other license files. Credits do not replace license obligations or imply permission to relicense upstream or proprietary material. No endorsement by LineageOS, Xiaomi, MediaTek, AOSP, LLVM or other upstream projects is implied.
