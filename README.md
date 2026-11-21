@@ -2,7 +2,9 @@
 
 Unofficial images for the Redmi Note 9 (`merlinx`, tested product `merlin`, MediaTek MT6768).
 
-This branch contains the sources, configuration and provenance for **merlinx LineageOS 24 server images — 2026-11-17**. Download the images from the `lineage-24-server-20261117` GitHub release.
+This branch contains the sources, configuration and provenance for **merlinx LineageOS 24 server images — base 2026-11-17**. Download the images from the `lineage-24.0-20261117-server` GitHub release.
+
+The images must match the installed nightly. The earlier release `lineage-24-server-20261117` was published on 2026-11-17 but is built for base nightly **2026-11-10**; its matching notes, sources and validation are at that tag. Both releases use the same kernel source, configuration and compiled kernel. Only the official ramdisk/DTB and system_ext contents come from a different nightly.
 
 The older LineageOS 20 release remains separate and is incompatible with these images.
 
@@ -18,7 +20,7 @@ See [CREDITS.md](CREDITS.md) for the upstream projects, exact source revisions, 
 | `SHA256SUMS` | SHA-256 checksums of downloaded assets. |
 | `SHA256SUMS.images` | SHA-256 checksums of decompressed partition images. |
 
-Base: **`lineage-24.0-20261110-nightly-merlinx-signed.zip`**, Android 17. Kernel: **`4.19.325-cip136-st20-g6fbdf4e6800a`**. Exact hashes and build identity are recorded in [PROVENANCE.json](PROVENANCE.json).
+Base: **`lineage-24.0-20261117-nightly-merlinx-signed.zip`**, Android 17. Kernel: **`4.19.325-cip136-st20-g6fbdf4e6800a`**. Exact hashes and build identity are recorded in [PROVENANCE.json](PROVENANCE.json).
 
 These are two partition images for an existing installation of that base. The complete custom ROM build was not finished. The system_ext image was repacked from the installed nightly; the custom kernel was compiled from source and repacked into its official boot image.
 

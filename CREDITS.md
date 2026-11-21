@@ -4,7 +4,7 @@ These unofficial images build on the work of the projects and device maintainers
 
 | Component | Original project / source | Exact revision or build used |
 | --- | --- | --- |
-| Base ROM, official boot ramdisk, DTB and system_ext contents | [LineageOS](https://lineageos.org/), [merlinx downloads](https://download.lineageos.org/devices/merlinx/builds) and its Redmi Note 9 maintainers | `lineage-24.0-20261110-nightly-merlinx-signed.zip`; SHA-256 `d145d17f72aa2d2f76258d71b24177b64e2048b96ae55f671889efdc5cc21433` |
+| Base ROM, official boot ramdisk, DTB and system_ext contents | [LineageOS](https://lineageos.org/), [merlinx downloads](https://download.lineageos.org/devices/merlinx/builds) and its Redmi Note 9 maintainers | `lineage-24.0-20261117-nightly-merlinx-signed.zip`; SHA-256 `22a7973fc3b413d7bd7ab23351f806b874772b6505e5f5a7b98c1c3a1e411f97` |
 | Device tree | [LineageOS/android_device_xiaomi_merlinx](https://github.com/LineageOS/android_device_xiaomi_merlinx/tree/0a954634bd18006ce49183bee50eb9762efea58f) | `0a954634bd18006ce49183bee50eb9762efea58f` |
 | Shared MT6768 device tree | [LineageOS/android_device_xiaomi_mt6768-common](https://github.com/LineageOS/android_device_xiaomi_mt6768-common/tree/3f0327f1a21c6f992b065712c64cf27e8a559bd8) | `3f0327f1a21c6f992b065712c64cf27e8a559bd8` |
 | Kernel and device drivers | [LineageOS/android_kernel_xiaomi_mt6768](https://github.com/LineageOS/android_kernel_xiaomi_mt6768/tree/6fbdf4e6800ab732f8f132cd3eca05b26e357255), including its Linux, CIP, Xiaomi, MediaTek and other upstream contributors | `6fbdf4e6800ab732f8f132cd3eca05b26e357255` |
@@ -12,7 +12,7 @@ These unofficial images build on the work of the projects and device maintainers
 | Boot image unpacking and packaging | [Android Open Source Project — platform/system/tools/mkbootimg](https://android.googlesource.com/platform/system/tools/mkbootimg/+/4a27dd13adf9846e12d585d6fe99a375ebb58396/) | `4a27dd13adf9846e12d585d6fe99a375ebb58396` |
 | AVB tooling | [LineageOS/android_external_avb](https://github.com/LineageOS/android_external_avb/tree/01ecfc9c3df4fbe3e785185742f3313252e70a18), based on Android Verified Boot from AOSP | `01ecfc9c3df4fbe3e785185742f3313252e70a18` |
 | ext4 inspection, image editing and filesystem checks | [e2fsprogs](https://e2fsprogs.sourceforge.net/) contributors (`debugfs`, `e2fsck`) | Host tools used to repack and validate system_ext |
-| Container kernel configuration and local init integration | [krashkanter](https://github.com/krashkanter), in this repository's `source/kernel` and `source/phone-init` directories | Release `lineage-24-server-20261117` |
+| Container kernel configuration and local init integration | [krashkanter](https://github.com/krashkanter), in this repository's `source/kernel` and `source/phone-init` directories | Release `lineage-24.0-20261117-server` |
 | Phone server backend and deployment | [Kela Server](https://github.com/krashkanter/kela-server) | Existing Python Docker bridge, Android startup scripts and deployment templates; separately provisioned, not embedded in the images |
 | Existing Android control app and root daemon | [DroidUtils](https://github.com/krashkanter/droidutils) | Runtime dependency of the init integration; not embedded in these partition images |
 

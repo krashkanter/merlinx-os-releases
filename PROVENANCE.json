@@ -1,25 +1,31 @@
 {
-  "release": "lineage-24-server-20261117",
+  "release": "lineage-24.0-20261117-server",
   "device": "merlinx (tested product merlin, MediaTek MT6768)",
-  "base": "lineage-24.0-20261110-nightly-merlinx-signed.zip",
-  "base_sha256": "d145d17f72aa2d2f76258d71b24177b64e2048b96ae55f671889efdc5cc21433",
+  "base": "lineage-24.0-20261117-nightly-merlinx-signed.zip",
+  "base_sha256": "22a7973fc3b413d7bd7ab23351f806b874772b6505e5f5a7b98c1c3a1e411f97",
+  "official_boot_sha256": "3e53d2414b87f018dedfd10910e020227d19554699df130572db01508efd9ac2",
   "kernel_source": "https://github.com/LineageOS/android_kernel_xiaomi_mt6768",
   "kernel_revision": "6fbdf4e6800ab732f8f132cd3eca05b26e357255",
   "kernel_release": "4.19.325-cip136-st20-g6fbdf4e6800a",
+  "kernel_image_sha256": "2f2e446a8e541fb22823e3e7e833400b9c1b03202664d1a3502864bc10a53520",
   "compiler": "Android clang 12.0.5, r416183b, build 7284624; llvm-project c935d99d7cf2016289302412d708641d52d2f7ee",
   "images": [
     {
       "file": "server-boot.img",
       "bytes": 67108864,
-      "sha256": "ed5c73b009d0f562989ff629e7472e7087a96bc86036f9deaa9872aab1fe1abc",
+      "sha256": "55ac53f4e92f37c42f5936ce835880a4c115ac2793482a90275c3807a8f77ec2",
       "asset": "server-boot.img.gz"
     },
     {
       "file": "system_ext-services.img",
-      "bytes": 582635520,
-      "sha256": "f3532be1ce5c967efd582445897fc355dfbdd50dde8a9f13afd7b8784105e889",
+      "bytes": 582643712,
+      "sha256": "f47564f279731f1c56a379fa712d6220ac1246bb1624bb30bbcd4b1db3fd6177",
       "asset": "system_ext-services.img.gz"
     }
   ],
+  "previous_release": {
+    "tag": "lineage-24-server-20261117",
+    "base": "lineage-24.0-20261110-nightly-merlinx-signed.zip"
+  },
   "build_scope": "Custom kernel compiled from source; boot repacked from official image; system_ext repacked with two init files. Full custom ROM build incomplete and not distributed."
 }

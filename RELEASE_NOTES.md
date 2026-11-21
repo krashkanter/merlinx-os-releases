@@ -1,11 +1,16 @@
-Two experimental server partition images for **Redmi Note 9 / merlinx (tested product merlin, MT6768)**, based on **LineageOS 24.0 nightly 2026-11-10 / Android 17**.
+Two experimental server partition images for **Redmi Note 9 / merlinx (tested product merlin, MT6768)**, based on **LineageOS 24.0 nightly 2026-11-17 / Android 17**. Flash these only over that exact nightly. The earlier release `lineage-24-server-20261117` is for nightly 2026-11-10.
+
+Changes from the previous release:
+- Same compiled kernel and source; it is repacked with the 2026-11-17 ramdisk and DTB.
+- system_ext is rebuilt from the 2026-11-17 nightly with the same two init files.
+- Kernel source, device trees and SELinux policy are unchanged between the two nightlies.
 
 - `server-boot.img.gz`: source-built `4.19.325-cip136-st20-g6fbdf4e6800a` kernel with 48 container options, packaged with the original nightly ramdisk and DTB.
 - `system_ext-services.img.gz`: matching nightly system_ext with two added Android init files for the existing server stack and DroidUtils daemon.
 - `merlinx-server-kernel-source.tar.gz`: complete corresponding kernel source, custom configuration fragment, resolved configuration and original build script. Upstream licensing files are retained.
 - `SHA256SUMS` and `SHA256SUMS.images`: checksums for downloads and decompressed images.
 
-**Read the [installation, source and rollback notes](https://github.com/krashkanter/merlinx-os-releases/blob/lineage-24-server/README.md) before flashing.** Exact build identity and base-image checksum are in [PROVENANCE.json](https://github.com/krashkanter/merlinx-os-releases/blob/lineage-24-server/PROVENANCE.json). The older LineageOS 20 release remains separate.
+**Read the [installation, source and rollback notes](https://github.com/krashkanter/merlinx-os-releases/blob/lineage-24.0-20261117-server/README.md) before flashing.** Exact build identity and base-image checksum are in [PROVENANCE.json](https://github.com/krashkanter/merlinx-os-releases/blob/lineage-24.0-20261117-server/PROVENANCE.json). The older LineageOS 20 release remains separate.
 
 Requirements: unlocked bootloader, the exact matching nightly, and the existing tested AVB configuration (vbmeta hashtree-disabled flag `1`). These images use unsigned AVB footers. The boot image is flashed to `boot` in bootloader fastboot; system_ext must be flashed to `system_ext` in **fastbootd**, with `is-userspace: yes`.
 
@@ -25,4 +30,4 @@ Validation: exact installed image hashes; all requested kernel options; Wi-Fi In
 
 Only the custom kernel was compiled from source. Boot and system_ext were repacked from the matching official nightly; the full custom ROM build was not completed. This release contains no complete ROM installer, device backup, modem/NVRAM images, personal data, or external boot menu. Preserve matching original partition images for rollback and do not format userdata.
 
-Credits: the base ROM and device support are from LineageOS and its merlinx/MT6768 maintainers; the kernel retains the Linux/CIP, Xiaomi, MediaTek and other upstream contributors' work. Compilation uses Android/LLVM Clang r416183b; packaging uses AOSP mkbootimg, LineageOS/AOSP AVB and e2fsprogs. The local changes are the container configuration, kernel build/repack and two init integration files. [Full credits and pinned source links](https://github.com/krashkanter/merlinx-os-releases/blob/lineage-24-server/CREDITS.md).
+Credits: the base ROM and device support are from LineageOS and its merlinx/MT6768 maintainers; the kernel retains the Linux/CIP, Xiaomi, MediaTek and other upstream contributors' work. Compilation uses Android/LLVM Clang r416183b; packaging uses AOSP mkbootimg, LineageOS/AOSP AVB and e2fsprogs. The local changes are the container configuration, kernel build/repack and two init integration files. [Full credits and pinned source links](https://github.com/krashkanter/merlinx-os-releases/blob/lineage-24.0-20261117-server/CREDITS.md).

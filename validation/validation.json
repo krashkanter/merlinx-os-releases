@@ -1,11 +1,12 @@
 {
+  "base": "lineage-24.0-20261117-nightly-merlinx-signed.zip",
   "official_kernel_revision": "6fbdf4e6800ab732f8f132cd3eca05b26e357255",
   "custom_kernel_revision": "6fbdf4e6800ab732f8f132cd3eca05b26e357255",
+  "kernel_image_sha256": "2f2e446a8e541fb22823e3e7e833400b9c1b03202664d1a3502864bc10a53520",
   "container_options": 48,
   "ramdisk_dtb": "Preserved byte-for-byte from official boot",
   "files": {
-    "official-boot.img": "03843cab798e4bb9e472b75a70f640574ab9928d5bdb4090c2cc515cb1c3bdb2",
-    "recovery.img": "e16ae6c09f309e33cdd376d8977120e3adf92c1c0628af3abc8089d66b84acb7",
-    "server-boot.img": "ed5c73b009d0f562989ff629e7472e7087a96bc86036f9deaa9872aab1fe1abc"
+    "official-boot.img": "3e53d2414b87f018dedfd10910e020227d19554699df130572db01508efd9ac2",
+    "server-boot.img": "55ac53f4e92f37c42f5936ce835880a4c115ac2793482a90275c3807a8f77ec2"
   }
 }

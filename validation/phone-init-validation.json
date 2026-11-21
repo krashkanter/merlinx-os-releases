@@ -1,12 +1,14 @@
 {
-  "original_sha256": "453d2fb56a4eb656cb2b71d0f3ad4680ad4f07c968df6ff07c8201b30d940f3e",
-  "modified_sha256": "f3532be1ce5c967efd582445897fc355dfbdd50dde8a9f13afd7b8784105e889",
-  "partition_size": 582635520,
+  "base": "lineage-24.0-20261117-nightly-merlinx-signed.zip",
+  "original_sha256": "d9e9193f0eaae41941f95198001516e2d74ee0ea0ee492ddcef50ae2c3cd67d1",
+  "original_source": "Official system_ext rebuilt from the OTA system_ext.new.dat.br/transfer.list, truncated to the OTA partition size; official AVB footer verified",
+  "modified_sha256": "f47564f279731f1c56a379fa712d6220ac1246bb1624bb30bbcd4b1db3fd6177",
+  "partition_size": 582643712,
   "original_entries_preserved": 3635,
   "added": [
     "/etc/init/phone-services.rc",
     "/bin/phone-services"
   ],
-  "policy": "Existing Lineage userdebug init->su rule; su is permissive",
+  "policy": "Existing Lineage userdebug init->su rule; su is permissive; plat_sepolicy.cil identical to the 2026-11-10 nightly",
   "avb": "Unsigned footer verified; existing vbmeta hashtree-disabled flag 1 required"
 }
